@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Rscripts Pumpkin Detector",
+  "version": "1.1.0",
+  "description": "Находит и подсвечивает спрятанные тыквы Halloween-ивента на rscripts.net. Ничего никуда не отправляет.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://rscripts.net/*", "https://www.rscripts.net/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://rscripts.net/*", "https://www.rscripts.net/*"],
+      "js": ["spots.js", "detector.js"],
+      "css": ["detector.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_title": "Pumpkin Detector", "default_popup": "popup.html" }
+}
